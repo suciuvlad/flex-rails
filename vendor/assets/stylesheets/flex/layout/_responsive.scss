@@ -1,0 +1,128 @@
+/* -------------------------------------------------- 
+ :: Responsive Grid
+ * -------------------------------------------------- */
+
+@media only screen and (max-width: 767px) { 
+  .l-container {
+    min-width: 0;
+  }
+
+  .l-row {
+    width: 100%; 
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+
+    [class*="l-grid"] {
+      float: none;
+      width: auto;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    [class*="l-grid"] + [class*="l-grid"]:last-child {
+      float: none;
+    }
+
+    [class*="l-grid"] {
+      margin-left: 0;
+    }
+
+    [class*="l-grid"]:first-child {
+      margin-left: 0;
+    }
+  }  
+}
+
+/* -------------------------------------------------- 
+ :: Responsive Image & Video
+* -------------------------------------------------- */
+
+img, embed, object, video { 
+  max-width: 100%;
+  height: inherit;
+  _width: 100%;
+}
+
+/* -------------------------------------------------- 
+ :: Visibility Across Devices
+* -------------------------------------------------- */
+
+/* Desktop */
+.l-phone-visible {
+  display: none !important;
+}
+
+.l-tablet-visible {
+  display: none !important;
+}
+
+.l-desktop-visible {
+  display: block !important;
+}
+
+.l-phone-hidden {
+  display: block !important;
+}
+
+.l-tablet-hidden {
+  display: block !important;
+}
+
+.l-desktop-hidden {
+  display: none !important;
+}
+
+/* Tablet */
+@media only screen and (max-width: 1280px) and (min-width: 768px) {
+  .l-phone-visible {
+    display: none !important;
+  }
+
+  .l-tablet-visible {
+    display: block !important;
+  }
+
+  .l-desktop-visible {
+    display: none !important;
+  }
+
+  .l-phone-hidden {
+    display: block !important;
+  }
+
+  .l-tablet-hidden {
+    display: none !important;
+  }
+
+  .l-desktop-hidden {
+    display: block !important;
+  }
+}
+
+/* Phone */
+@media only screen and (max-width: 767px) {
+  .l-phone-visible {
+    display: block !important;
+  }
+
+  .l-tablet-visible {
+    display: none !important;
+  }
+
+  .l-desktop-visible {
+    display: none !important;
+  }
+
+  .l-phone-hidden {
+    display: none !important;
+  }
+
+  .l-tablet-hidden {
+    display: block !important;
+  }
+
+  .l-desktop-hidden {
+    display: block !important;
+  }
+}

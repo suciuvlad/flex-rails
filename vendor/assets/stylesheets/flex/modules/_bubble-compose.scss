@@ -1,0 +1,8 @@
+/* -------------------------------------------------- 
+ EXTENDS BUBBLE
+ * -------------------------------------------------- */
+
+/* Bubble: Rounded */
+ .bbl-rounded {
+  @include border-radius($radius);
+}

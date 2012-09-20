@@ -1,0 +1,71 @@
+/* -------------------------------------------------- 
+ TOOLTIP
+ * -------------------------------------------------- */
+
+.ttp {
+  display: none;
+  position: absolute;
+  padding: 2px 5px;
+  z-index: 1000;
+  max-width: 200px;
+
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  color: #fff;
+  font-size: .846153846em;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+.ttp--arrow {
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+
+  border: 5px solid;
+
+}
+
+.ttp.ttp-top {
+  .ttp--arrow {
+    bottom: -10px;
+    left: 5px;
+
+    border-color: black transparent transparent transparent;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+  }
+}
+
+.ttp.ttp-right {
+  .ttp--arrow {
+    bottom: 50%;
+    left: -10px;
+    margin-bottom: -5px;
+
+    border-color: transparent #000 transparent transparent;
+    border-color: transparent rgba(0, 0, 0, 0.8) transparent transparent;
+  }
+}
+
+.ttp.ttp-bottom {
+  .ttp--arrow {
+    top: -10px;
+    left: 10px;
+
+    border-color: transparent transparent #000 transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent;
+  }
+}
+
+.ttp.ttp-left {
+  .ttp--arrow {
+    bottom: 50%;
+    margin-bottom: -5px;
+    right: -10px;
+
+    border-color: transparent transparent transparent #000;
+    border-color: transparent transparent transparent rgba(0, 0, 0, 0.8);
+  }
+}

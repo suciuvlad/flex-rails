@@ -1,0 +1,18 @@
+[class*="l-block"] {
+  @include clearfix();
+  margin-left: -(relativeValue($gridGutterWidth, $siteWidth));
+
+  > * {
+    float: left;
+    margin-left: relativeValue($gridGutterWidth, $siteWidth);
+    margin-bottom: relativeValue($gridGutterWidth, $siteWidth);
+  }
+}
+
+@for $i from 1 through $gridColumns {
+[class*="l-block#{$i}"] {
+  > * {
+    width: relativeValue(blockWidth($i), $siteWidth);
+  }
+}
+}

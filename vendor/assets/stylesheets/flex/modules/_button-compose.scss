@@ -1,0 +1,126 @@
+/* -------------------------------------------------- 
+ :: EXTENDS BUTTON
+ * -------------------------------------------------- */
+
+/* Button: ROUNDED */
+.btn-rounded {
+  @include border-radius($radius);
+}
+
+/* Button: Submit / Blue */
+.btn-submit {
+  border: 1px solid #3079ed;
+
+  background-color: #4d90fe;
+  @include background-image(linear-gradient(#4d90fe, #4787ed));
+
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    @include box-shadow(0 1px 1px rgba(0,0,0,0.1));
+
+    border: 1px solid darken(#3079ed, 10%);
+
+    background-color: #357ae8;
+    @include background-image(linear-gradient(#4d90fe, #357ae8));
+
+    color: #fff;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  }
+
+  &.is-btn-disabled,
+  &[disabled] {
+    border: 1px solid #3079ed;
+
+    background: #4d90fe;
+
+    color: #fff;   
+    text-shadow: none;
+
+    &:hover { color: #fff; }
+  }
+}
+
+/* Button: Call to Action / Red */
+.btn-cta {
+  @include box-shadow(0 1px 1px rgba(0,0,0,0.1));
+
+  border: 1px solid #c1260e;
+
+
+  background-color: #f44c32;
+  @include background-image(linear-gradient(#f44c32, #fd4428));
+
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    border: 1px solid darken(#c1260e, 10%);
+
+    background-color: #357ae8;
+    @include background-image(linear-gradient(#f44c32, #f3381c));
+
+    color: #fff;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  }
+
+  &.is-btn-disabled,
+  &[disabled] {
+    border: 1px solid #ff654e;
+
+    background: #fa8472;
+
+    color: #fff;
+    text-shadow: none;
+
+    &:hover { color: #fff; }
+  }
+}
+
+a.btn-submit,
+a.btn-cta {
+  color: #fff;
+  &:hover { color: #fff; }
+}
+
+
+
+/* Button: NavigationBar / Black */
+.btn-navigationbar {
+  border: 1px solid #000;
+
+  background-color: #0e0e0e;
+  @include background-image(linear-gradient(#151515, #040404));
+
+  @include box-shadow(inset 0 1px 0 rgba(255, 255, 255, .17), 0 1px 0 rgba(255, 255, 255, .075));
+
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    @include box-shadow(0 1px 1px rgba(0,0,0,0.1));
+
+    border: 1px solid #000;
+
+    background-color: #0e0e0e;
+    @include background-image(linear-gradient(#151515, #040404));
+
+    @include box-shadow(inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .075));
+
+    color: #fff;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  }
+
+  &.is-btn-disabled,
+  &[disabled] {
+    border: 1px solid #3079ed;
+
+    background: #4d90fe;
+
+    color: #fff;
+    text-shadow: none;
+
+    &:hover { color: #fff; }
+  }
+}

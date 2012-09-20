@@ -1,0 +1,132 @@
+/* -------------------------------------------------- 
+ BUBBLE
+ * -------------------------------------------------- */
+
+.bbl {
+  display: none;
+  position: absolute;
+  padding: 15px;
+  z-index: 1000;
+  width: 250px;
+  @include box-shadow(0 2px 1px rgba(0, 0, 0, 0.1));
+
+  border: 1px solid darken($borderColor, 10%);
+
+  background-color: #fff;
+}
+
+.bbl--arrow {
+  position: absolute;
+
+  .bbl--arrow--before, 
+  .bbl--arrow--after {
+    display: block;
+    height: 0;
+    position: absolute;
+    width: 0;
+  }
+
+  .bbl--arrow--before {
+    border: 9px solid;
+  }
+
+  .bbl--arrow--after {
+    border: 8px solid;
+  }
+}
+
+
+/* Left */
+.bbl-left .bbl--arrow {
+  right: 0;
+  top: 0;
+}
+
+.bbl-left .bbl--arrow--before,
+.bbl-left .bbl--arrow--after {
+  border-right-width: 0;
+}
+
+.bbl-left .bbl--arrow--before {
+  top: 9px;
+
+  border-color: transparent darken($borderColor, 10%);
+}
+
+.bbl-left .bbl--arrow--after {
+  top: 10px;
+
+  border-color: transparent #fff;
+}
+
+/* Right */
+.bbl-right .bbl--arrow {
+  left: -8px;
+  top: 0;
+}
+
+.bbl-right .bbl--arrow--before,
+.bbl-right .bbl--arrow--after {
+  border-left-width: 0;
+}
+
+.bbl-right .bbl--arrow--before {
+  top: 9px;
+  left: -1px;
+
+  border-color: transparent darken($borderColor, 10%);
+}
+
+.bbl-right .bbl--arrow--after {
+  top: 10px;
+
+  border-color: transparent #fff;
+}
+
+/* Top */
+.bbl-top .bbl--arrow {
+  left: 9px;
+  bottom: -9px;
+}
+
+.bbl-top .bbl--arrow--before,
+.bbl-top .bbl---arrow--after {
+  border-bottom-width: 0;
+}
+
+.bbl-top .bbl--arrow--before {
+  top: -9px;
+  left: -1px;
+
+  border-color: darken($borderColor, 10%) transparent;
+}
+
+.bbl-top .bbl--arrow--after {
+  top: -9px;
+
+  border-color: #fff transparent;
+}
+
+/* Bottom */
+.bbl-bottom .bbl--arrow {
+  left: 9px;
+  top: -9px;
+}
+
+.bbl-bottom .bbl--arrow--before,
+.bbl-bottom .bbl--arrow--after {
+  border-top-width: 0;
+}
+
+.bbl-bottom .bbl--arrow--before {
+  bottom: -9px;
+  left: -1px;
+
+  border-color: darken($borderColor, 10%) transparent;
+}
+
+.bbl-bottom .bbl--arrow--after {
+  bottom: -9px;
+
+  border-color: #fff transparent;
+}

@@ -1,0 +1,41 @@
+/* -------------------------------------------------- 
+ :: EXTENDS TABLE
+ * -------------------------------------------------- */
+
+
+/* Table: Bordered */
+
+.tbl-bordered {
+  border-collapse: separate;
+  border: 1px solid $borderColor;
+
+  th + th,
+  td + td,
+  th + td,
+  td + th {
+    border-left: 1px solid $borderColor;
+  }
+}
+
+.lt-ie8 {
+  .tbl-bordered {
+    *border-collapse: collapse;
+  }
+}
+
+/* Table: Striped */
+
+.tbl-striped {
+  tbody {
+    tr:nth-child(odd) td,
+    tr:nth-child(odd) th {
+      background-color: #fafafa;
+    }
+  }
+}
+
+/* Table: Rounded */
+
+.tbl-rounded {
+  @include border-radius($radius);
+}

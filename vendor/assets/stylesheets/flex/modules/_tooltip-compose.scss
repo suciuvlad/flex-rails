@@ -1,0 +1,9 @@
+/* -------------------------------------------------- 
+ EXTENDS TOOLTIP
+ * -------------------------------------------------- */
+
+/* Tooltip: Rounded */
+
+.ttp-rounded {
+  @include border-radius($radius);
+}

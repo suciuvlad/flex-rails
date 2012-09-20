@@ -1,0 +1,6 @@
+.cls {
+  font-weight: bold;
+  color: #797979;
+
+  &:hover { color: $bodyColor; text-decoration: none; }
+}

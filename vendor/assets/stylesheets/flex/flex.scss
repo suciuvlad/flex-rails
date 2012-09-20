@@ -1,0 +1,19 @@
+/*
+ * Flex v0.1.0
+ * A responsive and modular front-end framework closely
+   following the SMACSS naming conventions and concepts.
+ * Copyright 2012, Vlad Suciu
+ * vlad@fyves.com
+ */
+
+@import
+  "compass/css3",
+  "modular-scale",
+  "libs/reset",
+  "settings",
+  "functions/all",
+  "mixins/all",
+  "base/all",
+  "layout/all",
+  "modules/all",
+  "states/all";

@@ -1,0 +1,23 @@
+@function columnWidth($columns) {
+  @return (($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1)))
+}
+
+@function columnWidthRelative($columns) {
+  @return relativeValue(columnWidth($columns), $siteWidth);
+}
+
+@function offsetWidth($columns) {
+  @return percentage((($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1)) + $gridGutterWidth * 2) / $siteWidth);
+}
+
+@function offsetWidthFirstChild($columns) {
+  @return percentage((($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1)) + $gridGutterWidth) / $siteWidth);
+}
+
+@function relativeValue($target, $context) {
+  @return percentage($target / $context);
+}
+
+@function blockWidth($columns) {
+  @return ($siteWidth / $columns) - $gridGutterWidth;
+}

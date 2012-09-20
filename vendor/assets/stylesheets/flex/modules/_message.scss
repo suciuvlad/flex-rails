@@ -1,0 +1,38 @@
+/* -------------------------------------------------- 
+ :: MESSAGE
+ * -------------------------------------------------- */
+
+.msg {
+  position: relative;
+  padding-right: 30px;
+  margin-bottom: $lineHeight;
+  padding: 14px;
+
+  color: $bodyColor;
+  background-color: #f9f9f9;
+  border: 1px solid $borderColor;
+
+  ul:last-child, ol:last-child, dl:last-child, p:last-child { margin-bottom: 0; }
+}
+
+/* MESSAGE: Close Button */
+
+.msg .cls {
+  position: absolute;
+  top: 11px;
+  right: 15px;
+
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 767px) {
+  .msg {
+    padding: 7px;
+    padding-right: 14px;
+  }
+
+  .msg .cls {
+    top: 4px;
+    right: 8px;
+  }
+}

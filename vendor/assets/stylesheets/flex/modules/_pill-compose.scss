@@ -1,0 +1,32 @@
+.pil {
+  .drd-menu {
+    @include border-radius(0 0 $radius $radius);
+  }
+
+  .is-drd-open {
+    .drd-toggle {
+
+      background-color: darken($borderColor, 20%);
+
+      color: #fff;
+
+      &:after { border-top: 4px solid #fff; }
+    }
+  }
+}
+
+.pil-rounded {
+  > li {
+    > a {
+      @include border-radius($radius);
+    }
+  }
+}
+
+.pil-rounded {
+  .is-drd-open {
+    .drd-toggle {
+      @include border-radius($radius $radius 0 0);
+    }
+  }
+}

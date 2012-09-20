@@ -1,0 +1,15 @@
+ /* -------------------------------------------------- 
+ :: PROGRESS BAR
+ * -------------------------------------------------- */
+
+.pbr {
+  padding: 2px;
+  border: 1px solid $borderColor;
+  background-color: #fff;
+}
+
+.pbr--percentage {
+  height: 9px;
+  background-color: #cccccc;
+  width: 0;
+}

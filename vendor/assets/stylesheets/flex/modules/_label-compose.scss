@@ -1,0 +1,33 @@
+/* -------------------------------------------------- 
+ :: EXTENDS LABEL
+ * -------------------------------------------------- */
+
+.lbl {
+  &.lbl-error {
+    color: #fff;
+    background-color: #e42600;
+  }
+
+  &.lbl-alert {
+    color: #fff;
+    background-color: #ffcd00;
+  }
+
+  &.lbl-success {
+    color: #fff;
+    background-color: #37a100;
+  }
+
+  &.lbl-notice {
+    color: #fff;
+    background-color: #00438A;
+  }
+}
+
+/* Label: Rounded */
+
+.lbl {
+  &.lbl-rounded {
+    @include border-radius($radius);
+  }
+}

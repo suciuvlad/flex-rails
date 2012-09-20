@@ -1,0 +1,22 @@
+$baseFontFamily:    "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$baseFontSize:      14px !default;
+$importantNumber:   1218px !default;
+$baseLineHeight:    golden_ratio() !default;
+$defaultLineWidth:  550px !default;
+
+$base-size:         $baseFontSize $importantNumber;
+
+$headerFontColor:   #222 !default;
+
+$bodyColor:         #555 !default;
+
+$linkColor:         #0069d6 !default;
+$linkColorHover:    darken($linkColor, 15);
+
+$radius:            3px !default;
+$borderColor:       #dcdcdc !default;
+
+$gridColumns:       16 !default;
+$gridColumnWidth:   48 !default;
+$gridGutterWidth:   30 !default;
+$siteWidth:         ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridColumns - 1)) !default;

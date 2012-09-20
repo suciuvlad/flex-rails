@@ -1,0 +1,20 @@
+ /* -------------------------------------------------- 
+ :: EXTENDS FORM
+ * -------------------------------------------------- */
+ 
+ /* Form: Vertical Form */
+ 
+.frm-vertical .frm--field {
+  > label {
+    display: block;
+    width: auto;
+    float: none;
+    text-align: left;
+    padding-top: 0;
+    margin-bottom: 5px;
+  }
+}
+
+.frm-vertical .frm--input {
+  margin-left: 0;
+}

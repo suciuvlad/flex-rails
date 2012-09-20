@@ -1,0 +1,52 @@
+/* -------------------------------------------------- 
+ TAB
+ * -------------------------------------------------- */
+
+.tab {
+  margin-bottom: $lineHeight;
+}
+
+.tab--nav {
+  margin-bottom: $lineHeight;
+  margin-left: 0;
+
+  border-bottom: 1px solid $borderColor;
+
+  @include clearfix();
+  > li {
+    float: left;
+    margin-bottom: -1px;
+    margin-right: -1px;
+  }
+
+  > li > a { 
+    display: block;
+    padding: 7px 14px;
+
+    border: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+
+    background-color: #fafafa;
+
+    &:hover {
+      background-color: #f1f1f1;
+      text-decoration: none;
+    }
+  }
+
+}
+
+.tab--nav > li.is-tab-active > a {
+  background-color: #fff;
+  border-bottom-color: #fff;
+
+  color: $bodyColor;
+}
+
+.tab--container {
+  display: none;
+}
+
+.is-tab-active {
+  display: block;
+}

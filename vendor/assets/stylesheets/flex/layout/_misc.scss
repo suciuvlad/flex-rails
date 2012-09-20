@@ -1,0 +1,15 @@
+.l-clearfix {
+  @include clearfix();
+}
+
+.l-left {
+  float: left;
+}
+
+.l-right {
+  float: right;
+}
+
+.l-inline-block {
+  display: inline-block;
+}

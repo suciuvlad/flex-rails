@@ -1,0 +1,31 @@
+/* -------------------------------------------------- 
+ :: EXTENDS MESSAGE
+ * -------------------------------------------------- */
+
+.msg {
+  &.msg-error {
+    background-color: #FFF2F2;
+    border: 1px solid #fbc7c6;
+  }
+
+  &.msg-alert {
+    background-color: #fffcf0;
+    border: 1px solid #ffe785;
+  }
+
+  &.msg-success {
+    background-color: #F8FFF4;
+    border: 1px solid #bfe7bf;
+  }
+
+  &.msg-notice {
+    background-color: #f1fcff;
+    border: 1px solid #b0e4f4;
+  }
+}
+
+/* Message: Rounded */
+
+.msg-rounded {
+  @include border-radius($radius);
+}

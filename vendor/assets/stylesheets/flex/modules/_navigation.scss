@@ -1,0 +1,62 @@
+/* -------------------------------------------------- 
+ :: NAVIGATION
+ * -------------------------------------------------- */
+
+.nav {
+  a {
+    color: #aaa;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.nav--items--active a,
+.nav--items a:hover {
+  color: #fff;
+}
+
+.nav--container {
+  min-height: 46px;
+  background-color: #1e1e1e;
+}
+
+.nav-fixed-top,
+.nav-fixed-bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.nav-fixed-top {
+  top: 0;
+}
+
+.nav-fixed-bottom {
+  bottom: 0;
+}
+
+.nav--items {
+  margin: 0;
+  position: relative;
+
+  > li {
+    float: left;
+
+    a {
+      display: block;
+      padding: 12px 16px;
+    }
+  }
+
+  @include clearfix();
+}
+
+
+.nav--toggler {
+  margin: 8px 8px 8px 0;
+  float: right;
+  min-width: 0;
+}

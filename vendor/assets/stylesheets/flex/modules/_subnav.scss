@@ -1,0 +1,30 @@
+/* -------------------------------------------------- 
+ :: SUBNAV
+ * -------------------------------------------------- */
+
+.sav {
+  margin-left: 0;
+  
+  @include clearfix();
+}
+
+.sav > li {
+  display: inline;
+  float: left;
+  margin-right: 2px;
+
+  > a { 
+    display: block;
+    padding: 7px 10px 8px;
+
+    &:hover {
+      text-decoration: none;
+      background-color: #f1f1f1;
+    }
+  }
+
+  &.sav-active > a {
+    background-color: $linkColor;
+    color: #fff;
+  }
+}

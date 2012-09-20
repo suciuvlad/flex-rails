@@ -1,0 +1,61 @@
+/* -------------------------------------------------- 
+ :: DROPDOWN
+ * -------------------------------------------------- */
+
+.drd {
+  position: relative;
+  @include clearfix();
+}
+
+.drd--toggle {
+  &:after,
+  .drd--toggle--arrow {
+    display: inline-block;
+    margin-left: 7px;
+    width: 0;
+    height: 0;
+
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid $linkColor;
+
+    text-indent: -99999px;
+    vertical-align: middle;
+    content: "\2193";
+    color: $linkColor;
+
+    @include opacity(50);
+  }
+}
+
+.drd--toggle:hover,
+.is-drd-open .drd--toggle,
+.is-drd-open .drd--toggle:hover {
+  &:after {
+    @include opacity(100);
+  }
+}
+
+.drd--menu {
+  min-width: 180px;
+  max-width: 280px;
+  position: absolute;
+  display: none;
+  left: 0%;
+  top: 100%;
+  padding: 9px;
+  @include box-shadow(0 2px 1px rgba(0, 0, 0, 0.1));
+  z-index: 999;
+  margin-left: 0;
+
+  border: 1px solid darken($borderColor, 10%);
+  border-bottom: 1px solid darken($borderColor, 20%);
+
+  background-color: #fff;
+}
+
+.is-drd-open {
+  .drd--menu {
+    display: block;
+  }
+}

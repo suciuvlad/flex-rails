@@ -1,0 +1,5 @@
+@mixin gridColumn() {
+  float: left;
+  position: relative;
+  margin-left: percentage($gridGutterWidth / $siteWidth);
+}

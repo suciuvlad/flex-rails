@@ -1,0 +1,45 @@
+/* -------------------------------------------------- 
+ :: TABLE
+ * -------------------------------------------------- */
+
+.tbl {
+  width: 100%;
+  margin-bottom: $lineHeight;
+  padding: 0;
+
+  td, th { 
+    padding: 5px;
+
+    border-top: 1px solid $borderColor;
+
+    text-align: left;
+  }
+
+  th {
+    font-weight: bold;
+    border-top: 0;
+  }
+
+}
+
+/* Message: States */
+
+.is-row-selected {
+  td {
+    background-color: #ffffd6 !important;
+  }
+}
+
+.tbl {
+  tr:hover {
+    background-color: #ffffd6;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .tbl {
+    td, th {
+      padding: 3px;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+/* -------------------------------------------------- 
+ :: PAGINATION
+ * -------------------------------------------------- */
+
+.pgn {
+  margin-bottom: $lineHeight;
+
+  @include clearfix();
+}
+
+.pgn--numbers, 
+.pgn--nav {
+  li {
+    float: left;
+  }
+
+  li:first-child .pgn-btn { 
+    border-left-width: 1px; 
+  }
+}
+
+.pgn--numbers,
+.pgn--nav {
+  margin-left: 0;
+}
+
+.pgn--numbers {
+  float: left;  
+}
+
+.pgn--nav {
+  float: right;
+}
+
+.pgn--btn {
+  float: left;
+  padding: 4px 15px 5px;
+
+  border: 1px solid $borderColor;
+  border-left-width: 0;
+
+  &:hover { 
+    background-color: #f1f1f1;
+
+    text-decoration: none;
+  }
+
+  &.pgn--btn-current,
+  &.pgn--btn-text {
+    background-color: #fafafa;
+  }
+
+  &.pgn--btn-gap {
+    background-color: #fff;
+  }
+}

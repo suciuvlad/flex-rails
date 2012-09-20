@@ -1,0 +1,43 @@
+/* -------------------------------------------------- 
+ EXTENDS TAB
+ * -------------------------------------------------- */
+
+/* Tab: Rounded */
+
+.tab-rounded {
+  .tab--nav {
+    > li:first-child a { @include border-radius($radius 0 0 0); }
+    > li:last-child a { @include border-radius(0 $radius 0 0); }
+  }
+}
+
+/* Tab: Vertical Aligned */
+
+.tab-vertical {
+  .tab--nav {
+    > li {
+      float: none;
+      margin: 0;
+    }
+
+    > li > a {
+      border-bottom: 0;
+    }
+  }
+}
+
+
+@media (max-width: 480px) {
+  .tab {
+    .tab--nav {
+      > li {
+        float: none;
+        margin: 0;
+      }
+
+      > li > a {
+        border-bottom: 0;
+      }
+    }
+  }
+}

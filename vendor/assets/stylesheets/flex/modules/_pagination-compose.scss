@@ -1,0 +1,18 @@
+/* -------------------------------------------------- 
+ :: EXTENDS PAGINATION
+ * -------------------------------------------------- */
+
+/* Pagination: Rounded */
+
+.pgn-rounded {
+  .pgn--numbers,
+  .pgn--nav {
+    li:first-child .pgn-btn {
+      @include border-radius($radius 0 0 $radius);
+    }
+
+    li:last-child .pgn-btn {
+      @include border-radius(0 $radius $radius 0);
+    }
+  }
+}

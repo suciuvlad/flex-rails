@@ -1,0 +1,32 @@
+/* -------------------------------------------------- 
+ EXTENDS SUBNAV
+ * -------------------------------------------------- */
+
+/* Subnav: Rounded */
+.sav-rounded {
+  > li
+    > a {
+      @include border-radius($radius)
+    }
+}
+
+/* Subnav: Vertical */
+.sav-vertical {
+  li {
+    display: block;
+    float: none;
+    margin-right: 0;
+    margin-bottom: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sav {
+    li {
+      display: block;
+      float: none;
+      margin-right: 0;
+      margin-bottom: 2px;
+    }
+  }
+}

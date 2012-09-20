@@ -1,0 +1,346 @@
+ /* -------------------------------------------------- 
+ :: FORM
+ * -------------------------------------------------- */
+
+.frm {
+  margin-bottom: $lineHeight;
+
+  fieldset {
+    padding: 0; 
+    margin: 0;
+    border: 0;
+  }
+
+  legend {
+    display: block;
+    width: 100%;
+    margin-bottom: $lineHeight * 1.5;
+    line-height: $lineHeight * 2;
+
+    border: 0;
+    border-bottom: 1px solid #eee;
+
+    color: #222;
+
+    & + .frm--field { padding-top: $lineHeight; }
+  }
+
+}
+
+.frm--field {
+  margin-bottom: $lineHeight;
+
+  > label {
+    float: left;
+    width: 140px;
+    color: #222;
+    padding-top: 6px;
+    text-align: right;
+  }
+
+  @include clearfix();
+}
+
+.frm {
+  .frm--input {
+    margin-left: 160px;
+  }
+}
+
+.lt-ie8 {
+  .frm {
+    .frm--field {
+      label {
+        margin-right: 20px;
+      }
+    }
+
+    .frm--input {
+      margin-left: 0;
+    }
+  }
+}
+
+ /* Form: Inputs, Textareas, Selects */
+
+.frm--input {
+  @include clearfix();
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  textarea,
+  select {
+    height: 30px;
+
+    padding: 0 5px;
+    
+    @include box-sizing("border-box");
+
+    border: 1px solid $borderColor;
+    border-top-color: darken($borderColor, 10%);
+    outline: 0;
+
+    color: $bodyColor;
+  }
+
+  input[type="image"],
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin: 4px 0;
+
+    border: 0;
+
+    cursor: pointer;
+  }
+
+  select,
+  input[type="file"] {
+    height: 30px;
+    padding: 4px;
+    line-height: 30px;
+   }
+
+  input[type="file"] {
+    background-color: #fff;
+    padding: 0;
+  }
+
+  select {
+    background-color: #fff;
+  }
+
+  select[multiple],
+  select[size] {
+    height: auto;
+  }
+
+  input[type="image"] {
+    @include box-shadow(none);
+  }
+
+  textarea {
+    height: auto;
+    padding: 5px;
+  }
+
+  input[type="hidden"] {
+    display: none;
+  }
+
+}
+
+.lt-ie9 {
+  .frm--input {
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    textarea,
+    select {
+      line-height: 30px;
+    }
+  }
+}
+
+.lt-ie8 {
+  .frm--input {
+    select {
+      margin-top: 6px;
+    }
+  }
+}
+
+ /* Form: Checkboxes, Radios */
+
+ .frm--input {
+  .frm--radio,
+  .frm--checkbox {
+    padding-top: 0;
+    margin-bottom: 5px;
+  }
+
+  .frm--radio input[type="radio"],
+  .frm--checkbox input[type="checkbox"] {
+    float: left;
+    margin-right: 5px;
+  }
+
+  > .frm--radio:first-child,
+  > .frm--checkbox:first-child {
+    padding-top: 6px;
+  }
+
+  .frm--radio,
+  .frm--checkbox {
+    display: block;
+    text-align: left;
+
+    @include box-sizing("border-box");
+  }
+}
+
+.frm--input {
+  .frm--radio-inline,
+  .frm--checkbox-inline {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    width: auto;
+    padding-top: 6px;
+  }
+
+  .frm--radio-inline + .frm--radio-inline,
+  .frm--checkbox-inline + .frm--checkbox-inline {
+    margin-left: 10px;
+  }
+}
+
+/* Form: Help Blocks */
+
+.frm--help {
+  color: #838383;
+  margin-bottom: 0;
+  display: block;
+}
+
+.frm--help-inline {
+  display: inline-block;
+  margin-top: 5px;
+  padding-left: 5px;
+}
+
+ .frm--input-error .frm--help {
+  color: #d14331;
+ }
+
+ .frm--input-success .frm--help {
+  color: #2ea425;
+ }
+
+/* Form: States */
+
+.frm--input {
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  textarea,
+  select {
+    &:hover {
+      border-color: darken($borderColor, 12%);
+
+      @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.1) inset);
+    }
+
+    &:focus {
+      border-color: #2a93eb;
+
+      @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.1) inset);
+    }
+  }
+
+  select:focus {
+    border: 1px solid $borderColor;
+    border-top-color: darken($borderColor, 10%);
+  }
+}
+
+.frm--input-error {
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  textarea,
+  select {
+    border-color: #d14331;
+
+    &:focus, &:hover {
+      border-color: #d14331;        
+    }
+  }
+}
+
+.frm--input-success {
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  textarea,
+  select {
+    border-color: #2ea425;
+
+    &:focus, &:hover {
+      border-color: #2ea425;        
+    }
+  }
+}
+
+.frm--input {
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    color: #555;
+  }
+
+  input:-moz-placeholder,
+  textarea:-moz-placeholder {
+    color: #555;
+  }
+
+  input[disabled],
+  select[disabled],
+  textarea[disabled],
+  input[readonly],
+  select[readonly],
+  textarea[readonly],
+  .is-frm--input-disabled {
+    background-color: #f6f6f6;
+    cursor: default;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    @include box-shadow(none);
+
+    &:hover {
+      @include box-shadow(none);
+
+      border: 1px solid $borderColor;
+      border-top-color: darken($borderColor, 10%);
+    }
+  }
+}
+
+/* Form: Media Queries */
+
+@media (max-width: 480px) {
+
+  .frm {
+    .frm--input {
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="password"],
+      textarea,
+      select {
+        width: 100%;
+      }
+    }
+  }
+
+  .frm {
+    .frm--input {
+      margin-left: 0;
+    }
+  }
+
+  .frm--field > label {
+      display: block;
+      width: auto;
+      float: none;
+      text-align: left;
+      padding-top: 0;
+      margin-bottom: 5px;
+    }
+}
