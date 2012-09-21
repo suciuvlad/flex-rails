@@ -43,8 +43,9 @@
   }
 
   .nav--items {
+    float: none;
     clear: both;
-    > li {
+    li {
       float: none;
 
       a {

@@ -2,14 +2,26 @@
  :: NAVIGATION
  * -------------------------------------------------- */
 
-.nav {
+.nav--items {
+  position: relative;
+  margin-bottom: 0;
+  float: left;
+
+  li {
+    float: left;
+  }
+
   a {
+    display: block;
+    padding: 12px 16px;
     color: #aaa;
 
     &:hover {
       text-decoration: none;
     }
   }
+
+  @include clearfix();
 }
 
 .nav--items--active a,
@@ -37,23 +49,6 @@
 .nav-fixed-bottom {
   bottom: 0;
 }
-
-.nav--items {
-  margin: 0;
-  position: relative;
-
-  > li {
-    float: left;
-
-    a {
-      display: block;
-      padding: 12px 16px;
-    }
-  }
-
-  @include clearfix();
-}
-
 
 .nav--toggler {
   margin: 8px 8px 8px 0;
