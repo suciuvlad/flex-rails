@@ -3,15 +3,9 @@
  * -------------------------------------------------- */
 
 @media only screen and (max-width: 767px) { 
-  .l-container {
-    min-width: 0;
-  }
-
   .l-row {
-    width: 100%; 
+    width: 100%;
     min-width: 0;
-    margin-left: 0;
-    margin-right: 0;
 
     [class*="l-grid"] {
       float: none;
@@ -19,26 +13,14 @@
       margin-left: 0;
       margin-right: 0;
     }
-
-    [class*="l-grid"] + [class*="l-grid"]:last-child {
-      float: none;
-    }
-
-    [class*="l-grid"] {
-      margin-left: 0;
-    }
-
-    [class*="l-grid"]:first-child {
-      margin-left: 0;
-    }
-  }  
+  }
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
  :: Responsive Image & Video
 * -------------------------------------------------- */
 
-img, embed, object, video { 
+img, embed, object, video {
   max-width: 100%;
   height: inherit;
   _width: 100%;

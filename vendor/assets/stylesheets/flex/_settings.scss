@@ -17,6 +17,6 @@ $radius:            3px !default;
 $borderColor:       #dcdcdc !default;
 
 $gridColumns:       16 !default;
-$gridColumnWidth:   48 !default;
-$gridGutterWidth:   30 !default;
+$gridColumnWidth:   48px !default;
+$gridGutterWidth:   30px !default;
 $siteWidth:         ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridColumns - 1)) !default;

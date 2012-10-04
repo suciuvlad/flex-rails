@@ -1,18 +1,67 @@
 [class*="l-block"] {
   @include clearfix();
-  margin-left: -(relativeValue($gridGutterWidth, $siteWidth));
+  margin: 0 (relativeValue(- $gridGutterWidth / 2, $siteWidth));
 
-  > * {
+  > li,
+  > div {
     float: left;
-    margin-left: relativeValue($gridGutterWidth, $siteWidth);
+    padding: 0 relativeValue($gridGutterWidth / 2, $siteWidth);
     margin-bottom: relativeValue($gridGutterWidth, $siteWidth);
   }
 }
 
-@for $i from 1 through $gridColumns {
-[class*="l-block#{$i}"] {
-  > * {
-    width: relativeValue(blockWidth($i), $siteWidth);
+@for $i from 2 through 4 {
+  [class*="l-block#{$i}"] {
+    > li,
+    > div {
+      width: (100 / $i) * 1%;
+    }
   }
 }
+
+@for $i from 2 through 4 {
+  @media (min-width: 768px) and (max-width: 979px) {
+    [class*="l-block#{$i}"] {
+      > li,
+      > div {
+        @if ($i == 4) {
+          width: (100 / ($i - 1)) * 1%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  @for $i from 2 through 4 {
+    [class*="l-block#{$i}"] {
+      > li,
+      > div {
+        @if ($i == 3 or $i == 4) {
+          width: (100 / ($i - 1)) * 1%;
+        }@else{
+          width: auto;
+          display: block;
+          float: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  @for $i from 2 through 4 {
+    [class*="l-block#{$i}"] {
+      > li,
+      > div {
+        @if ($i == 4) {
+          width: (100 / ($i - 2)) * 1%;
+        }@else{
+          width: auto;
+          display: block;
+          float: none;
+        }
+      }
+    }
+  }
 }
