@@ -74,7 +74,14 @@ h6 {
 /* Typography: Lists */
 
 ul, ol {
-  margin: 0 0 $lineHeight $lineHeight;
+  margin: 0 0 $lineHeight 0;
+}
+
+ul.ul-square,
+ul.ul-circle,
+ul.ul-disc,
+ol {
+  margin-left: $lineHeight * 2;
 }
 
 ul { 

@@ -6,6 +6,7 @@
   width: 100%;
   margin-bottom: $lineHeight;
   padding: 0;
+  font-size: calc-em($baseFontSize - 1, $baseFontSize);
 
   td, th {
     padding: 5px;
@@ -18,7 +19,7 @@
   th {
     font-weight: bold;
     border-top: 0;
-    font-size: calc-em($baseFontSize - 1, $baseFontSize);
+    font-size: calc-em($baseFontSize - 2, $baseFontSize - 1);
     background-color: #EEEEEE;
     color: $headerFontColor;
   }
