@@ -13,7 +13,7 @@ Dropdown.init = function( options, elem ) {
 
   this.element  = elem;
   this.parent   = $(elem).parent();
-  this.menu     = $(elem).parent().find("drd--menu");
+  this.menu     = $(elem).parent().find(".drd--menu");
 
   this.parent.click(function(e) {
     e.stopPropagation();
