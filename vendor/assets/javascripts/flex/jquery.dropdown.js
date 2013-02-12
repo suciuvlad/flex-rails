@@ -24,7 +24,6 @@ Dropdown.init = function( options, elem ) {
   })
 
   this._onTrigger();
-  this._onWindowResize();
 
   return this;
 }
@@ -33,8 +32,6 @@ Dropdown._onTrigger = function() {
   var self = this,
       isActive;
 
-  this._reposition();
-
   $(this.element).click(function(e){
     var isActive  = self.parent.hasClass('is-drd-open')
       clear();
@@ -42,28 +39,6 @@ Dropdown._onTrigger = function() {
 
       return false;
   });
-}
-
-Dropdown._onWindowResize = function(){
-  var self = this;
-  $(window).resize(function(){
-    self._reposition();
-  })
-}
-
-Dropdown._reposition = function(){
-  var elemWidth   = $(this.element).width(),
-      elemOffset  = $(this.element).offset(),
-      menuWidth     = this.menu.width(),
-      windowWidth   = $(window).width();
-
-  if(elemOffset.left + menuWidth > windowWidth){
-    $(this.menu).css('right', "0%")
-                .css('left', 'auto');
-  }else{
-    $(this.menu).css('left', "0%")
-                .css('right', 'auto');
-  }
 }
 
 function clear(){

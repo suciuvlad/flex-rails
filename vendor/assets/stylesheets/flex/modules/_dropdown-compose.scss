@@ -2,33 +2,34 @@
  :: EXTENDS DROPDOWN
  * -------------------------------------------------- */
 
-.drd {
-  .drd--menu {
-    padding: 3px 0 4px;
-    > li a {
-      display: block;
-      padding: 1px 16px 1px 22px;
+.drd--menu {
+  padding: 3px 0 4px;
+  > li a {
+    display: block;
+    padding: 1px 16px 1px 22px;
 
-      border: solid white;
-      border-width: 1px 0;
+    border: solid white;
+    border-width: 1px 0;
 
-      color: $bodyColor;
-
-      &:hover {
-        border-color: darken(#4d90fe, 5%);
-
-        background-color: #4d90fe;
-
-        color: #fff;
-        text-decoration: none;
-      }
-    }
+    color: $bodyColor;
   }
+}
 
-  .drd--menu--sep {
-    border-top: 1px solid $borderColor;
-    margin: 5px 7px 6px;
+.drd--menu {
+  .is-drd--menu-active a,
+  > li a:hover {
+    border-color: darken(#4d90fe, 5%);
+
+    background-color: #4d90fe;
+
+    color: #fff;
+    text-decoration: none;
   }
+}
+
+.drd--menu--sep {
+  border-top: 1px solid $borderColor;
+  margin: 5px 7px 6px;
 }
 
 /* Dropdown: Button Module */
