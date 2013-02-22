@@ -16,7 +16,7 @@ Dropdown.init = function( options, elem ) {
   this.menu     = $(elem).parent().find(".drd--menu");
 
   this.parent.click(function(e) {
-    e.stopPropagation();
+    e.preventDefault();
   })
 
   $('html').click(function(){
