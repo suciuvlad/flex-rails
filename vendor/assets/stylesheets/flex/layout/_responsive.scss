@@ -2,7 +2,7 @@
  :: Responsive Grid
  * -------------------------------------------------- */
 
-@media only screen and (max-width: 767px) { 
+@media only screen and (max-width: calc-em(767px, $baseFontSize)) {
   .l-row {
     width: 100%;
     min-width: 0;

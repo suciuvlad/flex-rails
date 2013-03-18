@@ -3,9 +3,9 @@
  * -------------------------------------------------- */
 
 .l-row {
-  width: $siteWidth;
-  max-width: 100%;
-  min-width: 727px;
+  max-width: calc-em($siteWidth, $baseFontSize);
+  width: 100%;
+  min-width: calc-em(727px, $baseFontSize);
   margin: 0 auto;
 
   @include clearfix();
@@ -15,13 +15,13 @@
   min-width: 0;
   max-width: none;
   width: auto;
-  margin: 0 relativeValue(-$gridGutterWidth / 2, $siteWidth);
+  margin: 0 calc-em(-$gridGutterWidth / 2, $baseFontSize);
 }
 
 [class*="l-grid"] {
   float: left;
   position: relative;
-  padding: 0 relativeValue($gridGutterWidth / 2, $siteWidth);
+  padding: 0 calc-em($gridGutterWidth / 2, $baseFontSize);
 }
 
 @for $i from 1 through $gridColumns {

@@ -1,12 +1,12 @@
 [class*="l-block"] {
   @include clearfix();
-  margin: 0 (relativeValue(- $gridGutterWidth / 2, $siteWidth));
+  margin: 0 (calc-em(- $gridGutterWidth / 2, $baseFontSize));
 
   > li,
   > div {
     float: left;
-    padding: 0 relativeValue($gridGutterWidth / 2, $siteWidth);
-    margin-bottom: relativeValue($gridGutterWidth, $siteWidth);
+    padding: 0 calc-em($gridGutterWidth / 2, $baseFontSize);
+    margin-bottom: calc-em($gridGutterWidth, $baseFontSize);
   }
 }
 
@@ -20,7 +20,7 @@
 }
 
 @for $i from 2 through 4 {
-  @media (min-width: 768px) and (max-width: 979px) {
+  @media (min-width: calc-em(767px, $baseFontSize)) and (max-width: calc-em(979px, $baseFontSize)) {
     [class*="l-block#{$i}"] {
       > li,
       > div {
@@ -32,7 +32,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: calc-em(767px, $baseFontSize)) {
   @for $i from 2 through 4 {
     [class*="l-block#{$i}"] {
       > li,
@@ -49,7 +49,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: calc-em(480px, $baseFontSize)) {
   @for $i from 2 through 4 {
     [class*="l-block#{$i}"] {
       > li,
