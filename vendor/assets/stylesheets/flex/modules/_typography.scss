@@ -1,0 +1,125 @@
+a {
+  color: $linkColor;
+  text-decoration: none;
+
+  &:hover {
+    color: $linkColorHover;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    color: #cc4714;
+    outline: none;
+  }
+}
+
+ul.ul-square,
+ul.ul-circle,
+ul.ul-disc,
+ol {
+  margin-left: $lineHeight * 2;
+}
+
+ul {
+  list-style: none outside;
+
+  li {
+    line-height: $lineHeight;
+  }
+
+  &.ul-square {
+    list-style-type: square;
+  }
+
+  &.ul-circle {
+    list-style-type: circle;
+  }
+
+  &.ul-disc {
+    list-style-type: disc;
+  }
+}
+
+.dl--horizontal {
+  dt {
+    float: left;
+    width: 120px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  dd {
+    margin-left: 130px;
+  }
+}
+
+pre.pre {
+  border: 1px solid $borderColor;
+  background-color: #fafafa;
+
+  padding: 5px 10px;
+}
+
+code.code {
+  border: 1px solid $borderColor;
+  background-color: #fafafa;
+
+  padding: 0 5px;
+}
+
+// Blockquotes
+// --------------------------------------------------
+
+blockquote.blockquote {
+  margin: 0 0 $lineHeight 0;
+  padding: 15px 10px;
+  
+  border-left: 5px solid $linkColor;
+
+  background: #f5f5f5;
+
+  p {
+    margin-bottom: 0;
+
+    font-style: italic;
+  }
+
+  small {
+    display: block;
+    
+    color: lighten($bodyColor, 10%);
+    font-size: calc-em(12px, $baseFontSize);
+
+    &:before {
+      content: '\2014 \00A0';
+    }
+
+  }
+}
+
+// Misc
+// --------------------------------------------------
+
+hr.hr {
+  height: 0;
+  margin: $lineHeight 0 $lineHeight;
+  clear: both;
+
+  border: 0;
+  border-bottom: 1px solid $borderColor;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-right {
+  text-align: right;
+}

@@ -1,10 +1,5 @@
 body {
   background-color: #fff;
-  color: #555;
-  font-family: $baseFontFamily;
-  font-size: calc-em($baseFontSize, 16px);
-  line-height: calc-em($lineHeight, $baseFontSize);
   margin: 0;
   position: relative;
-  -webkit-font-smoothing: antialiased;
 }

@@ -5,8 +5,8 @@
   > li,
   > div {
     float: left;
-    padding: 0 calc-em($gridGutterWidth / 2, $baseFontSize);
-    margin-bottom: calc-em($gridGutterWidth, $baseFontSize);
+    padding: 0 calc-em($gridGutterWidth / 4, $baseFontSize);
+    margin-bottom: calc-em($gridGutterWidth / 2, $baseFontSize);
   }
 }
 
