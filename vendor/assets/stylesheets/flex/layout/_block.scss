@@ -8,61 +8,15 @@
     float: left;
     padding: 0 calc-em($gridGutterWidth / 4, $baseFontSize);
     margin-bottom: calc-em($gridGutterWidth / 2, $baseFontSize);
+    width: 100%;
   }
 }
 
-@for $i from 2 through 4 {
-  [class*="l-block#{$i}"] {
-    > li,
-    > div {
-      width: (100 / $i) * 1%;
-    }
-  }
-}
+@include blockGrid;
 
-@for $i from 2 through 4 {
-  @media (min-width: calc-em(767px, $baseFontSize)) and (max-width: calc-em(979px, $baseFontSize)) {
-    [class*="l-block#{$i}"] {
-      > li,
-      > div {
-        @if ($i == 4) {
-          width: (100 / ($i - 1)) * 1%;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: calc-em(767px, $baseFontSize)) {
-  @for $i from 2 through 4 {
-    [class*="l-block#{$i}"] {
-      > li,
-      > div {
-        @if ($i == 3 or $i == 4) {
-          width: (100 / ($i - 1)) * 1%;
-        }@else{
-          width: auto;
-          display: block;
-          float: none;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: calc-em(480px, $baseFontSize)) {
-  @for $i from 2 through 4 {
-    [class*="l-block#{$i}"] {
-      > li,
-      > div {
-        @if ($i == 4) {
-          width: (100 / ($i - 2)) * 1%;
-        }@else{
-          width: auto;
-          display: block;
-          float: none;
-        }
-      }
-    }
+@each $breakpoint in $breakpoints {
+  $name: nth($breakpoint, 1);
+  @include reponsiveBreakpoints($name) {
+    @include blockGrid('-#{$name}');
   }
 }

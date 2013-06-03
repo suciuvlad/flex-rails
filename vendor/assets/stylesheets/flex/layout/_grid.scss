@@ -5,7 +5,6 @@
 .l-row {
   max-width: calc-em($siteWidth, $baseFontSize);
   width: 100%;
-  min-width: calc-em(727px, $baseFontSize);
   margin: 0 auto;
 
   @include clearfix();
@@ -21,18 +20,11 @@
 [class*="l-grid"] {
   float: left;
   position: relative;
+  width: 100%;
   padding: 0 calc-em($gridGutterWidth / 2, $baseFontSize);
 }
 
-@for $i from 1 through $gridColumns {
-  .l-grid#{$i} {
-    width: percentage($i / $gridColumns);
-  }
-
-  .l-offset#{$i} {
-    margin-left: percentage($i / $gridColumns);
-  }
-}
+@include grid;
 
 .l-grid-centered,
 .l-grid-centered {

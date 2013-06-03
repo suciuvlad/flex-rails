@@ -2,17 +2,10 @@
  :: Responsive Grid
  * -------------------------------------------------- */
 
-@media only screen and (max-width: calc-em(767px, $baseFontSize)) {
-  .l-row {
-    width: 100%;
-    min-width: 0;
-
-    [class*="l-grid"] {
-      float: none;
-      width: auto;
-      margin-left: 0;
-      margin-right: 0;
-    }
+@each $breakpoint in $breakpoints {
+  $name: nth($breakpoint, 1);
+  @include reponsiveBreakpoints($name) {
+    @include grid('-#{$name}');
   }
 }
 
@@ -30,81 +23,158 @@ img, embed, object, video {
  :: Visibility Across Devices
 * -------------------------------------------------- */
 
-/* Desktop */
-.l-phone-visible {
+.l-palm-visible {
   display: none !important;
 }
 
-.l-tablet-visible {
+.l-lap-visible {
   display: none !important;
 }
 
-.l-desktop-visible {
-  display: block !important;
-}
-
-.l-phone-hidden {
-  display: block !important;
-}
-
-.l-tablet-hidden {
-  display: block !important;
-}
-
-.l-desktop-hidden {
+.l-portable-visible {
   display: none !important;
 }
 
-/* Tablet */
-@media only screen and (max-width: 1280px) and (min-width: 768px) {
-  .l-phone-visible {
-    display: none !important;
-  }
+.l-desk-visible {
+  display: block !important;
+}
 
-  .l-tablet-visible {
+.l-palm-hidden {
+  display: block !important;
+}
+
+.l-lap-hidden {
+  display: block !important;
+}
+
+.l-portable-hidden {
+  display: block !important;
+}
+
+.l-desk-hidden {
+  display: none !important;
+}
+
+/* Palm */
+@include reponsiveBreakpoints('palm') {
+  .l-palm-visible {
     display: block !important;
   }
 
-  .l-desktop-visible {
+  .l-lap-visible {
     display: none !important;
   }
 
-  .l-phone-hidden {
+  .l-portable-visible {
+    display: none !important;
+  }
+
+  .l-desk-visible {
+    display: none !important;
+  }
+
+  .l-palm-hidden {
+    display: none !important;
+  }
+
+  .l-lap-hidden {
     display: block !important;
   }
 
-  .l-tablet-hidden {
-    display: none !important;
+  .l-portable-hidden {
+    display: block !important;
   }
 
-  .l-desktop-hidden {
+  .l-desk-hidden {
     display: block !important;
   }
 }
 
-/* Phone */
-@media only screen and (max-width: 767px) {
-  .l-phone-visible {
-    display: block !important;
-  }
-
-  .l-tablet-visible {
+/* Lap */
+@include reponsiveBreakpoints('lap') {
+  .l-palm-visible {
     display: none !important;
   }
 
-  .l-desktop-visible {
-    display: none !important;
-  }
-
-  .l-phone-hidden {
-    display: none !important;
-  }
-
-  .l-tablet-hidden {
+  .l-lap-visible {
     display: block !important;
   }
 
-  .l-desktop-hidden {
+  .l-portable-visible {
+    display: none !important;
+  }
+
+  .l-desk-visible {
+    display: none !important;
+  }
+
+  .l-palm-hidden {
     display: block !important;
+  }
+
+  .l-lap-hidden {
+    display: none !important;
+  }
+
+  .l-portable-hidden {
+    display: block !important;
+  }
+
+  .l-desk-hidden {
+    display: block !important;
+  }
+}
+
+/* Portable */
+@include reponsiveBreakpoints('portable') {
+  .l-portable-visible {
+    display: block !important;
+  }
+
+  .l-desk-visible {
+    display: none !important;
+  }
+
+  .l-portable-hidden {
+    display: none !important;
+  }
+
+  .l-desk-hidden {
+    display: block !important;
+  }
+}
+
+/* Desk */
+@include reponsiveBreakpoints('desk') {
+  .l-palm-visible {
+    display: none !important;
+  }
+
+  .l-lap-visible {
+    display: none !important;
+  }
+
+  .l-portable-visible {
+    display: none !important;
+  }
+
+  .l-desk-visible {
+    display: block !important;
+  }
+
+  .l-palm-hidden {
+    display: block !important;
+  }
+
+  .l-lap-hidden {
+    display: block !important;
+  }
+
+  .l-portable-hidden {
+    display: block !important;
+  }
+
+  .l-desk-hidden {
+    display: none !important;
   }
 }
