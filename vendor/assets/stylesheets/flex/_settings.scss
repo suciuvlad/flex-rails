@@ -24,13 +24,10 @@ $gridColumnWidth:   48px !default;
 $gridGutterWidth:   30px !default;
 $siteWidth:         ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridColumns - 1)) !default;
 
-$palmWidth:        calc-em(480px, $baseFontSize) !default;
-$lapMinWidth:      calc-em(481px, $baseFontSize) !default;
-$lapMaxWidth:      calc-em(1023px, $baseFontSize) !default;
-$deskWidth:        calc-em(1024px, $baseFontSize) !default;
+$smallWidth:        calc-em(767px, 16px) !default;
+$largeMinWidth:      calc-em(768px, 16px) !default;
+$largeMaxWidth:      calc-em(1024px, 16px) !default;
 
 $breakpoints:
-  ( "palm" "(max-width: #{$palmWidth})",
-    "lap" "(min-width: #{$lapMinWidth}) and (max-width: #{$lapMaxWidth})",
-    "portable" "(max-width: #{$lapMaxWidth})",
-    "desk" "(min-width: #{$deskWidth})" );
+  ( "small" "(max-width: #{$smallWidth})",
+    "large" "(min-width: #{$largeMinWidth}) and (max-width: #{$largeMaxWidth})" );

@@ -23,158 +23,90 @@ img, embed, object, video {
  :: Visibility Across Devices
 * -------------------------------------------------- */
 
-.l-palm-visible {
+// Default
+.l-small-visible {
   display: none !important;
 }
 
-.l-lap-visible {
+.l-large-visible {
   display: none !important;
 }
 
-.l-portable-visible {
+.l-visible {
+  display: block !important;
+}
+
+.l-small-hidden {
+  display: block !important;
+}
+
+.l-large-hidden {
+  display: block !important;
+}
+
+.l-hidden {
   display: none !important;
 }
 
-.l-desk-visible {
-  display: block !important;
-}
-
-.l-palm-hidden {
-  display: block !important;
-}
-
-.l-lap-hidden {
-  display: block !important;
-}
-
-.l-portable-hidden {
-  display: block !important;
-}
-
-.l-desk-hidden {
-  display: none !important;
-}
-
-/* Palm */
-@include reponsiveBreakpoints('palm') {
-  .l-palm-visible {
+// Small
+@include reponsiveBreakpoints('small') {
+  .l-small-visible {
     display: block !important;
   }
 
-  .l-lap-visible {
+  .l-large-visible {
     display: none !important;
   }
 
-  .l-portable-visible {
+  .l-visible {
     display: none !important;
   }
 
-  .l-desk-visible {
+  .l-small-hidden {
     display: none !important;
   }
 
-  .l-palm-hidden {
-    display: none !important;
-  }
-
-  .l-lap-hidden {
+  .l-large-hidden {
     display: block !important;
   }
 
-  .l-portable-hidden {
+  .l-hidden {
     display: block !important;
   }
 
-  .l-desk-hidden {
+  .l-small-visible.l-large-visible {
     display: block !important;
   }
 }
 
-/* Lap */
-@include reponsiveBreakpoints('lap') {
-  .l-palm-visible {
+// Large
+@include reponsiveBreakpoints('large') {
+  .l-small-visible {
     display: none !important;
   }
 
-  .l-lap-visible {
+  .l-large-visible {
     display: block !important;
   }
 
-  .l-portable-visible {
+  .l-visible {
     display: none !important;
   }
 
-  .l-desk-visible {
+  .l-small-hidden {
+    display: block !important;
+  }
+
+  .l-large-hidden {
     display: none !important;
   }
 
-  .l-palm-hidden {
+  .l-hidden {
     display: block !important;
   }
 
-  .l-lap-hidden {
-    display: none !important;
-  }
-
-  .l-portable-hidden {
+  .l-small-visible.l-large-visible {
     display: block !important;
   }
 
-  .l-desk-hidden {
-    display: block !important;
-  }
-}
-
-/* Portable */
-@include reponsiveBreakpoints('portable') {
-  .l-portable-visible {
-    display: block !important;
-  }
-
-  .l-desk-visible {
-    display: none !important;
-  }
-
-  .l-portable-hidden {
-    display: none !important;
-  }
-
-  .l-desk-hidden {
-    display: block !important;
-  }
-}
-
-/* Desk */
-@include reponsiveBreakpoints('desk') {
-  .l-palm-visible {
-    display: none !important;
-  }
-
-  .l-lap-visible {
-    display: none !important;
-  }
-
-  .l-portable-visible {
-    display: none !important;
-  }
-
-  .l-desk-visible {
-    display: block !important;
-  }
-
-  .l-palm-hidden {
-    display: block !important;
-  }
-
-  .l-lap-hidden {
-    display: block !important;
-  }
-
-  .l-portable-hidden {
-    display: block !important;
-  }
-
-  .l-desk-hidden {
-    display: none !important;
-  }
 }
