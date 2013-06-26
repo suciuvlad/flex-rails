@@ -1,7 +1,7 @@
 require "fileutils"
 require "pathname"
 
-FLEX_PATH = Pathname.new("/Users/vladsuciu/Dropbox/dev/Flex")
+FLEX_PATH = Pathname.new("/Users/mbk/Dropbox/dev/Flex")
 ASSETS_PATH = Pathname.new(File.dirname(__FILE__)).join("vendor", "assets")
 
 JS_FILES  = %w(polyfills jquery.tooltip jquery.bubble jquery.dropdown jquery.message jquery.modal jquery.tab jquery.collapse)

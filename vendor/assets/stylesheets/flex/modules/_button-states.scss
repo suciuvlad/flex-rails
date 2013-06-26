@@ -1,0 +1,141 @@
+/*
+ * 1.3.0 BUTTON: STATES
+*/
+
+/* --------------------------------------------------------------------------
+   1.3.1 HOVER
+   -------------------------------------------------------------------------- */
+
+/* 1.3.1.0 Base
+   -------------------------------------------------------------------------- */
+.btn {
+  &:hover {
+    text-decoration: none;
+    color: darken($bodyColor, 10%);
+    background-color: darken(#f1f1f1, 5%);
+    cursor: pointer;
+  }
+}
+
+/* 1.3.1.1 Primary
+   -------------------------------------------------------------------------- */
+.btn-primary {
+  &:hover {
+    background-color: darken($primaryColor, 5%);
+    color: #fff;
+  }
+}
+
+/* 1.3.1.2 Secondary
+   -------------------------------------------------------------------------- */
+.btn-secondary {
+  &:hover {
+    background-color: darken($secondaryColor, 5%);
+    color: #fff;
+  }
+}
+
+/* 1.3.1.3 Navigationbar
+   -------------------------------------------------------------------------- */
+.btn-navigationbar {
+  &:hover {
+    @include box-shadow(0 1px 1px rgba(0,0,0,0.1));
+
+    border: 1px solid #000;
+
+    background-color: #0e0e0e;
+    @include background-image(linear-gradient(#151515, #040404));
+
+    @include box-shadow(inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .075));
+
+    color: #fff;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   1.3.2 ACTIVE
+   -------------------------------------------------------------------------- */
+
+/* 1.3.2.0 Base
+   -------------------------------------------------------------------------- */
+.btn {
+  &.is-btn-active,
+  &:active {
+    @include box-shadow(inset 0 1px 2px rgba(0, 0, 0, .2));
+  }
+}
+
+/* --------------------------------------------------------------------------
+   1.3.3 FOCUS
+   -------------------------------------------------------------------------- */
+
+/* 1.3.3.0 Base
+   -------------------------------------------------------------------------- */
+.btn {
+  &.is-btn-focus,
+  &:focus {
+    outline: 1px dotted #666;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   1.3.4 DISABLED
+   -------------------------------------------------------------------------- */
+
+/* 1.3.4.0 Base
+   -------------------------------------------------------------------------- */
+.btn {
+  &.is-btn-disabled,
+  &[disabled] {
+    @include opacity(.6);
+
+    color: $bodyColor;
+    cursor: default;
+    background-color: #f1f1f1;
+
+    &:hover { color: $bodyColor; }
+  }
+}
+
+/* 1.3.4.1 Primary
+   -------------------------------------------------------------------------- */
+.btn-primary {
+  &.is-btn-disabled,
+  &[disabled] {
+    color: #fff;
+    background-color: $primaryColor;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+/* 1.3.4.2 Secondary
+   -------------------------------------------------------------------------- */
+.btn-secondary {
+  &.is-btn-disabled,
+  &[disabled] {
+    color: #fff;
+    background-color: $secondaryColor;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+/* 1.3.4.3 Navigationbar
+   -------------------------------------------------------------------------- */
+.btn-navigationbar {
+  &:hover {
+    @include box-shadow(0 1px 1px rgba(0,0,0,0.1));
+
+    border: 1px solid #000;
+
+    background-color: #0e0e0e;
+    @include background-image(linear-gradient(#151515, #040404));
+
+    @include box-shadow(inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .075));
+
+    color: #fff;
+  }
+}

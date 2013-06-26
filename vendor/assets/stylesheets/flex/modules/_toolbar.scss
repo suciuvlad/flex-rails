@@ -17,7 +17,6 @@
 .tlb {
   .btn {
     float: left; /* inline-block whitespace issue */
-    margin-left: -1px;
     @include border-radius(0);
   }
 }
