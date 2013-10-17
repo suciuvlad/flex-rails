@@ -10,19 +10,17 @@
 .btn {
   display: inline-block;
   min-width: 75px;
-  padding: calc-em(7px, 14px) calc-em(15px, 14px);
+  padding: calc-em(6px, 14px) calc-em(15px, 14px);
   @include box-shadow(none);
 
-  background-color: #f1f1f1;
-
   color: $bodyColor;
+  border: 1px solid $borderColor;
 
   font-size: 1em;
   text-align: center;
   line-height: normal;
 
   cursor: pointer;
-  border: 0;
 }
 
 a.btn {

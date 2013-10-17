@@ -4,7 +4,7 @@
       width: percentage($i / $gridColumns);
     }
 
-    .l-offset#{$i} {
+    .l-offset#{$namespace}#{$i} {
       margin-left: percentage($i / $gridColumns);
     }
   }

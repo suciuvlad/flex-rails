@@ -1,53 +1,75 @@
-var Tab = {};
+/*jslint nomen: true, unparam: true, regexp: true, indent: 2 */
+/*global jQuery, document, window */
 
-Tab.init = function( options, elem ) {
-  var self    = this;
+var Flex = Flex || {};
 
-  this.options = $.extend( {}, this.defaults, options, $(elem).data() );
+(function ($) {
 
-  this.element        = elem;
-  this.anchors        = $(this.element).find('> .tab--nav a');
-  this.tabContainers  = $(this.element).find('> .tab--container');
+  'use strict';
+  var Tab = {};
 
-  this._onTrigger();
-
-  return this;
-}
-
-Tab._onTrigger = function(hash) {
-  var self = this;
-
-  this.anchors.click(function(e){
-    e.preventDefault();
-
-    var hash = $(this).attr("href");
-
-    if(hash.charAt(0) != "#" || $(this).parent().hasClass('is-tab-active')) { 
-     return false; 
-    }
-
-    self.showTab(hash);
-
-    $(self.element).find(".tab--nav li").removeClass('is-tab-active');
-    $(this).parent().addClass('is-tab-active');
-    
-  }).filter(':first').click();
-}
-
-Tab.showTab = function(hash) {
-  this.tabContainers.hide().filter(hash).show();
-}
-
-$.plugin = function( name, object ) {
-  $.fn[ name ] = function( options ) {
-    return this.each(function() {
-      if ( ! $.data( this, name ) ) {
-        $.data( this, name, Object.create(object).init(options, this) );
-      }
-    });
+  Tab.defaults = {
+    triggerfirst: true
   };
-};
 
-$.plugin( 'tab', Tab );
+  Tab.init = function (options, elem) {
+    var self    = this;
 
-$( '[data-trigger=tab]' ).tab();
+    this.options = $.extend({}, this.defaults, options, Tab.defaults, $(elem).data());
+
+    this.element        = elem;
+    this.anchors        = $(this.element).find('.js-tab--nav a, .js-tab--nav--btn');
+    this.tabContainers  = $(this.element).find('.js-tab--container');
+
+    this._onTrigger();
+
+    return this;
+  };
+
+  Tab._onTrigger = function (hash) {
+    var self = this;
+
+    this.anchors.click(function (e) {
+      if (this.nodeName !== "LABEL") {
+        e.preventDefault();
+      }
+
+      var hash = $(this).attr("href") || $(this).data('target');
+
+      if (this.nodeName !== "LABEL") {
+        if (hash.charAt(0) !== "#" || $(this).parent().hasClass('is-tab-active')) {
+          return false;
+        }
+      }
+
+      self.showTab(hash);
+
+      $(self.element).find(".js-tab--nav > *").removeClass('is-tab-active');
+      $(this).parent().addClass('is-tab-active');
+      
+    });
+
+    if (this.options.triggerfirst) {
+      this.anchors.filter(':first').click();
+    }
+  };
+
+  Tab.showTab = function (hash) {
+    this.tabContainers.hide().filter(hash).show();
+  };
+
+  $.plugin = function (name, object) {
+    $.fn[name] = function (options) {
+      return this.each(function () {
+        if (!$.data(this, name)) {
+          $.data(this, name, Object.create(object).init(options, this));
+        }
+      });
+    };
+  };
+
+  $.plugin('tab', Tab);
+
+  $('[data-trigger=tab]').tab();
+  Flex.Tab = Tab;
+}(jQuery, window, document));

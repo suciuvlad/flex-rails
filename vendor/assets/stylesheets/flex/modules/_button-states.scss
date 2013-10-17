@@ -12,7 +12,8 @@
   &:hover {
     text-decoration: none;
     color: darken($bodyColor, 10%);
-    background-color: darken(#f1f1f1, 5%);
+    background-color: #f5f5f5;
+    border: 1px solid darken($borderColor, 5%);
     cursor: pointer;
   }
 }
@@ -23,6 +24,7 @@
   &:hover {
     background-color: darken($primaryColor, 5%);
     color: #fff;
+    border: 1px solid $primaryColor;
   }
 }
 
@@ -32,6 +34,7 @@
   &:hover {
     background-color: darken($secondaryColor, 5%);
     color: #fff;
+    border: 1px solid $secondaryColor;
   }
 }
 

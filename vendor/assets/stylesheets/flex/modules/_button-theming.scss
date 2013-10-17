@@ -2,6 +2,10 @@
  * 1.2.0 BUTTON: THEMING
 */
 
+.btn {
+  background-color: #fff;
+}
+
 .btn-primary,
 .btn-secondary {
   color: #fff;
@@ -18,6 +22,7 @@ a.btn-secondary {
    -------------------------------------------------------------------------- */
 .btn-primary {
   background-color: $primaryColor;
+  border: 1px solid $primaryColor;
 }
 
 /* --------------------------------------------------------------------------
@@ -25,6 +30,7 @@ a.btn-secondary {
    -------------------------------------------------------------------------- */
 .btn-secondary {
   background-color: $secondaryColor;
+  border: 1px solid $secondaryColor;
 }
 
 /* --------------------------------------------------------------------------

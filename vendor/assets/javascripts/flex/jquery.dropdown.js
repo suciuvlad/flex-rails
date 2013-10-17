@@ -1,67 +1,84 @@
-var Dropdown = {};
+/*jslint nomen: true, unparam: true, regexp: true, indent: 2 */
+/*global jQuery, document, window */
 
-Dropdown.defaults = {
-  trigger: "mouseover"
-}
+var Flex = Flex || {};
 
-Dropdown.init = function( options, elem ) {
-  var self = this,
-      onEventIn,
-      onEventOut;
+(function ($) {
 
-  this.options = $.extend( {}, this.defaults, options, $(elem).data() );
+  'use strict';
 
-  this.element  = elem;
-  this.parent   = $(elem).parent();
-  this.menu     = $(elem).parent().find(".drd--menu");
+  var Dropdown = {},
+    clear;
 
-  this.parent.click(function(e) {
-    e.preventDefault();
-  })
+  clear = function () {
+    $('.drd--toggle').parent().removeClass('is-drd-open');
+  };
 
-  $('html').click(function(){
-    clear();
-  })
+  Dropdown.defaults = {
+    trigger: "mouseover"
+  };
 
-  this._onTrigger();
+  Dropdown.init = function (options, elem) {
+    var onEventIn,
+      onEventOut,
+      self = this;
 
-  return this;
-}
+    this.options = $.extend({}, this.defaults, options, $(elem).data());
 
-Dropdown._onTrigger = function() {
-  var self = this,
+    this.element  = elem;
+    this.parent   = $(elem).parent();
+    this.menu     = $(elem).parent().find(".drd--menu");
+
+
+    $(document).on('click', function (e) {
+      if ($(e.target).is('.drd--menu') || $.contains(self.menu[0], e.target)) {
+        return;
+      }
+
+      clear();
+    });
+
+    this._onTrigger();
+
+    return this;
+  };
+
+  Dropdown._onTrigger = function () {
+    var self = this,
       isActive;
 
-  $(this.element).click(function(e){
-    var isActive  = self.parent.hasClass('is-drd-open')
+    $(this.element).click(function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      var isActive  = self.parent.hasClass('is-drd-open');
+
+
       clear();
       !isActive && self.parent.toggleClass('is-drd-open');
-
-      return false;
-  });
-}
-
-function clear(){
-  $('.drd--toggle').parent().removeClass('is-drd-open');
-}
-
-$.plugin = function( name, object ) {
-  $.fn[ name ] = function( options ) {
-    return this.each(function() {
-      if ( ! $.data( this, name ) ) {
-        $.data( this, name, Object.create(object).init(options, this) );
-      }
     });
   };
-};
 
-$.plugin( 'dropdown', Dropdown );
+  $.plugin = function (name, object) {
+    $.fn[name] = function (options) {
+      return this.each(function () {
+        if (!$.data(this, name)) {
+          $.data(this, name, Object.create(object).init(options, this));
+        }
+      });
+    };
+  };
 
-// Deferred initialization
-if ( document.addEventListener ) { 
-  document.addEventListener( "click", function(event) {
-    $(event.target).closest( "[data-trigger=dropdown]" ).dropdown();
-  }, true );
-} else {
-  $( '[data-trigger=dropdown]' ).dropdown();
-}
+  $.plugin('dropdown', Dropdown);
+
+  // Deferred initialization
+  if (document.addEventListener) {
+    document.addEventListener("click", function (event) {
+      $(event.target).closest("[data-trigger=dropdown]").dropdown();
+    }, true);
+  } else {
+    $('[data-trigger=dropdown]').dropdown();
+  }
+
+  Flex.Dropdown = Dropdown;
+
+}(jQuery, window, document));

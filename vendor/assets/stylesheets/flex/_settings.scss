@@ -36,3 +36,4 @@ $breakpoints:
     "large" "(min-width: #{$largeMinWidth}) and (max-width: #{$largeMaxWidth})" );
 
 $navigation-breakpoints: ('small') !default;
+$form-breakpoints: ('small') !default;

@@ -19,8 +19,6 @@
   th {
     font-weight: bold;
     border-top: 0;
-    font-size: calc-em($baseFontSize - 2, $baseFontSize - 1);
-    background-color: #EEEEEE;
     color: $headerFontColor;
   }
 
@@ -34,7 +32,7 @@
   }
 }
 
-.tbl {
+.tbl-hover {
   tbody {
     tr:hover td {
       background-color: #ffffd6 !important;

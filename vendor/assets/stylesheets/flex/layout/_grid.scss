@@ -24,7 +24,7 @@
   padding: 0 calc-em($gridGutterWidth / 2, $baseFontSize);
 }
 
-@include grid;
+@include grid('-small');
 
 .l-grid-centered,
 .l-grid-centered {

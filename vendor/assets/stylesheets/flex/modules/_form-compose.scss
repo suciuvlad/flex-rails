@@ -1,20 +1,19 @@
  /* -------------------------------------------------- 
  :: EXTENDS FORM
  * -------------------------------------------------- */
+
+@import '../mixins/modules/form';
  
  /* Form: Vertical Form */
  
-.frm-vertical .frm--field {
-  > label {
-    display: block;
-    width: auto;
-    float: none;
-    text-align: left;
-    padding-top: 0;
-    margin-bottom: 5px;
-  }
+.frm-vertical {
+  @include form();
 }
 
-.frm-vertical .frm--input {
-  margin-left: 0;
+@each $name in $form-breakpoints {
+  @include reponsiveBreakpoints($name) {
+    .frm {
+      @include form;
+    }
+  }
 }
