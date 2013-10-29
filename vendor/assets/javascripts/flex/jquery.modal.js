@@ -24,7 +24,7 @@ var Flex = Flex || {};
 
     if (overlay.length === 0) {
       overlay = $('<div class="mdl--overlay" />').appendTo('body');
-    };
+    }
 
     this._overlay = overlay;
 
@@ -50,7 +50,7 @@ var Flex = Flex || {};
     var self = this;
 
     if (this.options.closeButton) {
-      $('.mdl--close').click(function (e) {
+      $('.mdl--close').on('click', function (e) {
         e.preventDefault();
         $(self.element).trigger('modal:close');
       });
@@ -73,7 +73,7 @@ var Flex = Flex || {};
     var self = this;
 
     if (this.options.clickOverlay) {
-      self._overlay.click(function () {
+      self._overlay.on('click', function () {
         $(self.element).trigger('modal:close');
       });
     }

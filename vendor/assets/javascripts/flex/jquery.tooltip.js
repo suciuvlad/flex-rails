@@ -1,5 +1,5 @@
 /*jslint nomen: true, unparam: true, regexp: true, indent: 2 */
-/*global jQuery, document, window */
+/*global jQuery, document, window, setTimeout */
 
 var Flex = Flex || {};
 
@@ -35,6 +35,7 @@ var Flex = Flex || {};
     $([this.element, this.tooltip.get(0)]).bind('mouseover', $.proxy(this._onEventIn, this));
     $([this.element, this.tooltip.get(0)]).bind('mouseout', $.proxy(this._onEventOut, this));
     $(window).bind('resize', $.proxy(this._reposition, this));
+    $(window).bind('hashchange', $.proxy(this.hide, this));
 
     return this;
   };
@@ -44,7 +45,7 @@ var Flex = Flex || {};
 
     if (self.delayOutTimer) {
       clearTimeout(self.delayOutTimer);
-    };
+    }
 
     self.delayOutTimer = setTimeout(function () {
       self.show();
