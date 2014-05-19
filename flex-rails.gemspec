@@ -25,5 +25,5 @@ Gem::Specification.new do |s|
   s.add_dependency "railties", ">= 3.2.2"
   s.add_dependency "compass", [">= 0.12.2"]
   s.add_dependency "sass", [">= 3.2.0"]
-  s.add_dependency "modular-scale", [">= 1.0.2"]
+  s.add_dependency "modular-scale", ["~> 1.0.2"]
 end
