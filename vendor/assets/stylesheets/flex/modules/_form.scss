@@ -72,9 +72,9 @@
   input[type="password"],
   textarea,
   select {
-    height: 30px;
+    height: 34px;
 
-    padding: 0 5px;
+    padding: 0 7px;
     
     @include box-sizing("border-box");
 
@@ -98,9 +98,9 @@
 
   select,
   input[type="file"] {
-    height: 30px;
+    height: 34px;
     padding: 4px;
-    line-height: 30px;
+    line-height: 34px;
    }
 
   input[type="file"] {
@@ -123,7 +123,7 @@
 
   textarea {
     height: auto;
-    padding: 5px;
+    padding: 7px;
   }
 
   input[type="hidden"] {
@@ -140,7 +140,7 @@
     input[type="password"],
     textarea,
     select {
-      line-height: 30px;
+      line-height: 34px;
     }
   }
 }
