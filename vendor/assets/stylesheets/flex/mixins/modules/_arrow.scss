@@ -1,0 +1,290 @@
+$arrow-multiplier: 1.41421356; // cos(PI/4)
+
+@function compute-border-width($size, $borderWidth) {
+  @return $size + round($borderWidth * $arrow-multiplier);
+}
+
+@mixin base($size, $borderWidth) {
+  position: relative;
+
+  &:after,
+  &:before {
+    width: 0;
+    height: 0;
+    content: "";
+    position: absolute;
+    border-collapse: separate;
+    border: $size solid transparent;
+  }
+
+  &:before {
+    border-width: $borderWidth;
+  }
+}
+
+/**
+ * Gravity: North
+*/
+
+@mixin gravity-n($size, $bgColor, $borderColor, $borderWidth) {
+  &:after,
+  &:before {
+    bottom: 100%;
+  }
+
+  &:after {
+    border-bottom-color: $bgColor;
+  }
+
+  &:before {
+    border-bottom-color: $borderColor;
+  }
+};
+
+@mixin arrow-topLeft($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-n($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
+    left: $size;
+  }
+
+  &:before {
+    left:  $size - round($borderWidth * $arrow-multiplier);
+  }
+};
+
+@mixin arrow-topCenter($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-n($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
+    left: 50%;
+    margin-left: -$size;
+  }
+
+  &:before {
+    left: 50%;
+    margin-left: -$computedBorderWidth;
+  }
+};
+
+@mixin arrow-topRight($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-n($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
+    right: $size;
+  }
+
+  &:before {
+    right:  $size - round($borderWidth * $arrow-multiplier);
+  }
+};
+
+
+/**
+ * Gravity: East
+*/
+
+@mixin gravity-e($size, $bgColor, $borderColor, $borderWidth) {
+  &:after,
+  &:before {
+    left: 100%;
+  }
+
+  &:after {
+    border-left-color: $bgColor;
+  }
+
+  &:before {
+    border-left-color: $borderColor;
+  }
+};
+
+@mixin arrow-rightTop($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-e($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
+    top: $size;
+  }
+
+  &:before {
+    top:  $size - round($borderWidth * $arrow-multiplier);
+  }
+};
+
+@mixin arrow-rightCenter($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-e($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
+    top: 50%;
+    margin-top: -$size;
+  }
+
+  &:before {
+    top: 50%;
+    margin-top: -$computedBorderWidth;
+  }
+};
+
+@mixin arrow-rightBottom($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-e($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
+    bottom: $size;
+  }
+
+  &:before {
+    bottom:  $size - round($borderWidth * $arrow-multiplier);
+  }
+};
+
+
+/**
+ * Gravity: South
+*/
+
+@mixin gravity-s($size, $bgColor, $borderColor, $borderWidth) {
+  &:after,
+  &:before {
+    top: 100%;
+  }
+
+  &:after {
+    border-top-color: $bgColor;
+  }
+
+  &:before {
+    border-top-color: $borderColor;
+  }
+};
+
+@mixin arrow-bottomLeft($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-s($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
+    left: $size;
+  }
+
+  &:before {
+    left:  $size - round($borderWidth * $arrow-multiplier);
+  }
+};
+
+@mixin arrow-bottomCenter($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-s($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
+    left: 50%;
+    margin-left: -$size;
+  }
+
+  &:before {
+    left: 50%;
+    margin-left: -$computedBorderWidth;
+  }
+};
+
+@mixin arrow-bottomRight($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-s($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
+    right: $size;
+  }
+
+  &:before {
+    right:  $size - round($borderWidth * $arrow-multiplier);
+  }
+};
+
+
+/**
+ * Gravity: West
+*/
+
+@mixin gravity-w($size, $bgColor, $borderColor, $borderWidth) {
+  &:after,
+  &:before {
+    right: 100%;
+  }
+
+  &:after {
+    border-right-color: $bgColor;
+  }
+
+  &:before {
+    border-right-color: $borderColor;
+  }
+};
+
+@mixin arrow-leftTop($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-w($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
+    top: $size;
+  }
+
+  &:before {
+    top:  $size - round($borderWidth * $arrow-multiplier);
+  }
+};
+
+@mixin arrow-rightCenter($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-w($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
+    top: 50%;
+    margin-top: -$size;
+  }
+
+  &:before {
+    top: 50%;
+    margin-top: -$computedBorderWidth;
+  }
+};
+
+@mixin arrow-rightBottom($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-w($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
+    bottom: $size;
+  }
+
+  &:before {
+    bottom:  $size - round($borderWidth * $arrow-multiplier);
+  }
+};

@@ -5,17 +5,18 @@
 .ttp {
   display: none;
   position: absolute;
-  padding: 2px 5px;
+  padding: 5px 8px;
   z-index: 1000;
-  max-width: 200px;
+  max-width: 250px;
 
   background-color: #000;
   background-color: rgba(0, 0, 0, 0.8);
 
   color: #fff;
-  font-size: .846153846em;
-  line-height: 1.5em;
+  font-size: 12px;
+  line-height: calc-em(golden-height-adjusted(200px, 12px), 12px);
   text-align: center;
+  @include border-radius($radius);
 }
 
 .ttp--arrow {
