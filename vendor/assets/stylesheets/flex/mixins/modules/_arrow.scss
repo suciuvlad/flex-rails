@@ -5,8 +5,6 @@ $arrow-multiplier: 1.41421356; // cos(PI/4)
 }
 
 @mixin base($size, $borderWidth) {
-  position: relative;
-
   &:after,
   &:before {
     width: 0;
