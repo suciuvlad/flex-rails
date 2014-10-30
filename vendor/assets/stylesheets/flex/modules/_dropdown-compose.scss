@@ -40,5 +40,6 @@
 
 .drd {
   .btn:after { border-top: 4px solid $bodyColor; }
-  .btn-submit:after { border-top: 4px solid #fff; }
+  .btn-primary:after { border-top: 4px solid #fff; }
+  .btn-secondary:after { border-top: 4px solid #fff; }
 }
